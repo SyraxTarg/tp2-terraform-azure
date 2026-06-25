@@ -1,12 +1,16 @@
 #cloud-config
 package_update: true
-package_upgrade: true
 packages:
-  - apt-transport-https
-  - ca-certificates
-  - curl
-  - gnupg
-  - lsb-release
-
+  - nginx
+write_files:
+  - path: /var/www/html/index.html
+    content: |
+      <html>
+      <body>
+      <h1>ShopEasy - serveur web ${server_index}</h1>
+      <p>Deploiement realise avec Terraform sur Azure.</p>
+      </body>
+      </html>
 runcmd:
-  - echo "Fichier cloud-init initialisé pour l'architecture Azure !" > /var/www/html/index.html
+  - systemctl enable nginx
+  - systemctl restart nginx
