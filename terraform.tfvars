@@ -1,6 +1,6 @@
 project             = "shopeasy"
 environment         = "dev"
-location            = "francecentral"
+location            = "koreacentral"
 admin_username      = "azureuser"
 ssh_public_key_path = "~/.ssh/id_rsa.pub"
 allowed_ssh_cidr    = "x.x.x.x/32"

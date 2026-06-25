@@ -27,7 +27,7 @@ resource "azurerm_linux_virtual_machine" "web" {
   name                = "vm-${local.prefix}-web-${count.index + 1}"
   location            = azurerm_resource_group.main.location
   resource_group_name = azurerm_resource_group.main.name
-  size                = "Standard_B1s"
+  size                = "Standard_B2as_v2"
   admin_username      = var.admin_username
   network_interface_ids = [
     azurerm_network_interface.web[count.index].id
